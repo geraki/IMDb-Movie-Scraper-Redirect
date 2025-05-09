@@ -32,3 +32,11 @@ function updateAction(tabId, url) {
     chrome.action.setTitle({ tabId, title: 'No IMDb movie ID detected' });
   }
 }
+
+chrome.action.onClicked.addListener((tab) => {
+  chrome.storage.local.get('scraperUrl', (data) => {
+    if (data.scraperUrl) {
+      chrome.tabs.create({ url: data.scraperUrl });
+    }
+  });
+});
