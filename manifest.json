@@ -1,19 +1,21 @@
 {
-    "manifest_version": 3,
-    "name": "IMDb Movie Scraper Redirect",
-    "version": "1.0",
-    "description": "Redirect IMDb movie pages to rdm.ayush.gg scraper.",
-    "permissions": ["tabs"],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "action": {
-      "default_title": "Go to Movie Scraper"
-    },
-    "icons": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
-    }
+  "manifest_version": 3,
+  "name": "IMDb Movie Scraper Redirect",
+  "version": "1.1",
+  "description": "Redirect IMDb movie pages to a custom scraper site.",
+  "permissions": ["tabs", "storage"],
+  "host_permissions": ["*://*.imdb.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "No IMDb movie ID detected"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
   }
-  
+}
